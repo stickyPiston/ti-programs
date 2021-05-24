@@ -1,0 +1,135 @@
+"INPUT=Str1"
+1→I:1→P:999→dim(L₁):Fill(0,L₁):1→C
+ClrHome
+While I≤length(Str1)
+sub(Str1,I,1)→Str2
+Output(10,1,Str2)
+Output(10,3,"    ")
+Output(10,3,I)
+If Str2="+":L₁(P)+1→L₁(P)
+If Str2="-":L₁(P)-1→L₁(P)
+If Str2=">":Then
+P+1→P
+If P>999:1→P
+End
+If Str2="<":Then
+P-1→P
+If P<1:999→P
+End
+If Str2=".":Then
+C+1→C
+If C>26:Then
+Output(1,1,"                           ")
+1→C
+End
+If L₁(P)=32:Output(1,C," ")
+If L₁(P)=33:Output(1,C,"!")
+If L₁(P)=40:Output(1,C,"(")
+If L₁(P)=41:Output(1,C,")")
+If L₁(P)=42:Output(1,C,"*")
+If L₁(P)=43:Output(1,C,"+")
+If L₁(P)=44:Output(1,C,",")
+If L₁(P)=45:Output(1,C,"-")
+If L₁(P)=46:Output(1,C,".")
+If L₁(P)=47:Output(1,C,"/")
+If L₁(P)=48:Output(1,C,"0")
+If L₁(P)=49:Output(1,C,"1")
+If L₁(P)=50:Output(1,C,"2")
+If L₁(P)=51:Output(1,C,"3")
+If L₁(P)=52:Output(1,C,"4")
+If L₁(P)=53:Output(1,C,"5")
+If L₁(P)=54:Output(1,C,"6")
+If L₁(P)=55:Output(1,C,"7")
+If L₁(P)=56:Output(1,C,"8")
+If L₁(P)=57:Output(1,C,"9")
+If L₁(P)=58:Output(1,C,":")
+If L₁(P)=60:Output(1,C,"<")
+If L₁(P)=61:Output(1,C,"=")
+If L₁(P)=62:Output(1,C,">")
+If L₁(P)=63:Output(1,C,"?")
+If L₁(P)=65:Output(1,C,"A")
+If L₁(P)=66:Output(1,C,"B")
+If L₁(P)=67:Output(1,C,"C")
+If L₁(P)=68:Output(1,C,"D")
+If L₁(P)=69:Output(1,C,"E")
+If L₁(P)=70:Output(1,C,"F")
+If L₁(P)=71:Output(1,C,"G")
+If L₁(P)=72:Output(1,C,"H")
+If L₁(P)=73:Output(1,C,"I")
+If L₁(P)=74:Output(1,C,"J")
+If L₁(P)=75:Output(1,C,"K")
+If L₁(P)=76:Output(1,C,"L")
+If L₁(P)=77:Output(1,C,"M")
+If L₁(P)=78:Output(1,C,"N")
+If L₁(P)=79:Output(1,C,"O")
+If L₁(P)=80:Output(1,C,"P")
+If L₁(P)=81:Output(1,C,"Q")
+If L₁(P)=82:Output(1,C,"R")
+If L₁(P)=83:Output(1,C,"S")
+If L₁(P)=84:Output(1,C,"T")
+If L₁(P)=85:Output(1,C,"U")
+If L₁(P)=86:Output(1,C,"V")
+If L₁(P)=87:Output(1,C,"W")
+If L₁(P)=88:Output(1,C,"X")
+If L₁(P)=89:Output(1,C,"Y")
+If L₁(P)=90:Output(1,C,"Z")
+If L₁(P)=91:Output(1,C,"[")
+If L₁(P)=93:Output(1,C,"]")
+If L₁(P)=94:Output(1,C,"^")
+If L₁(P)=97:Output(1,C,"A")
+If L₁(P)=98:Output(1,C,"B")
+If L₁(P)=99:Output(1,C,"C")
+If L₁(P)=100:Output(1,C,"D")
+If L₁(P)=101:Output(1,C,"E")
+If L₁(P)=102:Output(1,C,"F")
+If L₁(P)=103:Output(1,C,"G")
+If L₁(P)=104:Output(1,C,"H")
+If L₁(P)=105:Output(1,C,"I")
+If L₁(P)=106:Output(1,C,"J")
+If L₁(P)=107:Output(1,C,"K")
+If L₁(P)=108:Output(1,C,"L")
+If L₁(P)=109:Output(1,C,"M")
+If L₁(P)=110:Output(1,C,"N")
+If L₁(P)=111:Output(1,C,"O")
+If L₁(P)=112:Output(1,C,"P")
+If L₁(P)=113:Output(1,C,"Q")
+If L₁(P)=114:Output(1,C,"R")
+If L₁(P)=115:Output(1,C,"S")
+If L₁(P)=116:Output(1,C,"T")
+If L₁(P)=117:Output(1,C,"U")
+If L₁(P)=118:Output(1,C,"V")
+If L₁(P)=119:Output(1,C,"W")
+If L₁(P)=120:Output(1,C,"X")
+If L₁(P)=121:Output(1,C,"Y")
+If L₁(P)=122:Output(1,C,"Z")
+If L₁(P)=123:Output(1,C,"{")
+If L₁(P)=125:Output(1,C,"}")
+End
+If Str2=",":Then
+Input T
+T→L₁(P)
+End
+If Str2="[" and L₁(P)=0:Then
+­1→L
+Repeat Str2="]" and L=0
+If Str2="[":L+1→L
+If Str2="]":L-1→L
+I+1→I
+Output(10,3,"    ")
+Output(10,3,I)
+sub(Str1,I,1)→Str2
+End
+End
+If Str2="]" and L₁(P)≠0:Then
+­1→L
+Repeat Str2="[" and L=0
+If Str2="[":L-1→L
+If Str2="]":L+1→L
+I-1→I
+Output(10,3,"    ")
+Output(10,3,I)
+sub(Str1,I,1)→Str2
+End
+End
+I+1→I
+End
