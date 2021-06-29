@@ -1,0 +1,91 @@
+remainder(L₁(P),10)+1→B
+(L₁(P)-(B-1))/10→A
+If A>1:Then
+If [A](B,A-1)=0 and [B](B,A-1)=0:Then
+1→[B](B,A-1)
+If not(B=Y and A-1=X):Output(B,A-1,"0")
+P+1→P
+(A-1)*10+(B-1)→L₁(P)
+prgmS
+remainder(L₁(P),10)+1→B
+(L₁(P)-(B-1))/10→A
+End
+If B>1:Then
+If [A](B-1,A-1)=0 and [B](B-1,A-1)=0:Then
+1→[B](B-1,A-1)
+If not(B-1=Y and A-1=X):Output(B-1,A-1,"0")
+P+1→P
+(A-1)*10+(B-2)→L₁(P)
+prgmS
+remainder(L₁(P),10)+1→B
+(L₁(P)-(B-1))/10→A
+End
+End
+If B<9:Then
+If [A](B+1,A-1)=0 and [B](B+1,A-1)=0:Then
+1→[B](B+1,A-1)
+If not(B+1=Y and A-1=X):Output(B+1,A-1,"0")
+P+1→P
+(A-1)*10+B→L₁(P)
+prgmS
+remainder(L₁(P),10)+1→B
+(L₁(P)-(B-1))/10→A
+End
+End
+End
+If A<26:Then
+If [A](B,A+1)=0 and [B](B,A+1)=0:Then
+1→[B](B,A+1)
+If not(B=Y and A+1=X):Output(B,A+1,"0")
+P+1→P
+(A+1)*10+(B-1)→L₁(P)
+prgmS
+remainder(L₁(P),10)+1→B
+(L₁(P)-(B-1))/10→A
+End
+If B>1:Then
+If [A](B-1,A+1)=0 and [B](B-1,A+1)=0:Then
+1→[B](B-1,A+1)
+If not(B-1=Y and A+1=X):Output(B-1,A+1,"0")
+P+1→P
+(A+1)*10+(B-2)→L₁(P)
+prgmS
+remainder(L₁(P),10)+1→B
+(L₁(P)-(B-1))/10→A
+End
+End
+If B<9:Then
+If [A](B+1,A+1)=0 and [B](B+1,A+1):Then
+1→[B](B+1,A+1)
+If not(B+1=Y and A+1=X):Output(B+1,A+1,"0")
+P+1→P
+(A+1)*10+B→L₁(P)
+prgmS
+remainder(L₁(P),10)+1→B
+(L₁(P)-(B-1))/10→A
+End
+End
+End
+If B>1:Then
+If [A](B-1,A)=0 and [B](B-1,A)=0:Then
+1→[B](B-1,A)
+If not(B-1=Y and A=X):Output(B-1,A,"0")
+P+1→P
+A*10+(B-2)→L₁(P)
+prgmS
+remainder(L₁(P),10)+1→B
+(L₁(P)-(B-1))/10→A
+End
+End
+If B<9:Then
+If [A](B+1,A)=0 and [B](B+1,A)=0:Then
+1→[B](B+1,A)
+If not(B+1=Y and A=X):Output(B+1,A,"0")
+P+1→P
+A*10+B→L₁(P)
+prgmS
+remainder(L₁(P),10)+1→B
+(L₁(P)-(B-1))/10→A
+End
+End
+P-1→P

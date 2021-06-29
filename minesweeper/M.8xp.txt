@@ -1,0 +1,112 @@
+ClrHome
+{9,26}→dim([A])
+{9,26}→dim([B])
+9*26→dim(L₁)
+1→P
+Fill(0,[A])
+Fill(0,[B])
+For(I,1,26)
+randInt(1,26)→X
+randInt(1,9)→Y
+Repeat [A](Y,X)≠9
+randInt(1,26)→X
+randInt(1,9)→Y
+End
+If X>1:Then
+If [A](Y,X-1)≠9:[A](Y,X-1)+1→[A](Y,X-1)
+If Y<9:Then
+If [A](Y+1,X-1)≠9:[A](Y+1,X-1)+1→[A](Y+1,X-1):End
+If Y>1:Then
+If [A](Y-1,X-1)≠9:[A](Y-1,X-1)+1→[A](Y-1,X-1):End
+End
+If X<26:Then
+If [A](Y,X+1)≠9:[A](Y,X+1)+1→[A](Y,X+1)
+If Y<9:Then
+If [A](Y+1,X+1)≠9:[A](Y+1,X+1)+1→[A](Y+1,X+1):End
+If Y>1:Then
+If [A](Y-1,X+1)≠9:[A](Y-1,X+1)+1→[A](Y-1,X+1):End
+End
+If Y>1:Then
+If [A](Y-1,X)≠9:[A](Y-1,X)+1→[A](Y-1,X):End
+If Y<9:Then
+If [A](Y+1,X)≠9:[A](Y+1,X)+1→[A](Y+1,X):End
+9→[A](Y,X)
+End
+
+Output(10,1,"L:")
+Output(10,4,"3")
+
+Output(10,6,"F:")
+Output(10,9,"0/26")
+
+0→C:3→L
+Output(1,1,"+")
+getKey→K
+1→X:1→Y
+Repeat K=45
+X→W:Y→Z
+If K=25 and Y>1:Y-1→Y
+If K=24 and X>1:X-1→X
+If K=34 and Y<9:Y+1→Y
+If K=26 and X<26:X+1→X
+If W≠X or Y≠Z:Then
+If [B](Z,W)=1:Output(Z,W,[A](Z,W))
+If [B](Z,W)=0:Output(Z,W," ")
+If [B](Z,W)=2:Output(Z,W,"P")
+Output(Y,X,"+"):End
+
+If K=95:Then
+0→M
+If [B](Y,X)=2:Then
+0→[B](Y,X)
+1→M
+If [A](Y,X)=9:Then
+C-1→C
+Output(10,9,C)
+Output(10,10+(log(C)≥1),"/26")
+End
+End
+If [B](Y,X)=0 and M=0:Then
+If [A](Y,X)=9:Then
+C+1→C
+Output(10,9,C)
+Output(10,10+(log(C)≥1),"/26")
+2→[B](Y,X)
+Else
+L-1→L
+Output(10,4,L)
+End
+End
+End
+
+If K=105:Then
+If [A](Y,X)=9:Then
+ClrHome
+Stop
+End
+If [A](Y,X)≠0:Then
+1→[B](Y,X)
+Else
+Output(10,24,"...")
+1→[B](Y,X)
+10*X+(Y-1)→L₁(P)
+prgmS
+1→P
+Output(10,24,"   ")
+End
+End
+
+If C=26:Then
+ClrHome
+Disp "WIN"
+Stop
+End
+
+If L=0:Then
+ClrHome
+Disp "LOST"
+Stop
+End
+
+getKey→K
+End
